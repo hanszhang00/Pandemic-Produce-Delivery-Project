@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 const stripe = require("stripe")(process.env.stripeSecretKey);
-
 router.post("/", function (req, res) {
   const body = {
     source: req.body.token.id,

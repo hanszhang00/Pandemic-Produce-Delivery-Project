@@ -1,0 +1,49 @@
+version: 2
+# https://circleci.com/signup/
+# You can sign up with github
+# npm install pretty-quick husky --dev   for prettier
+# Within package.json add script "precommit": "pretty-quick --staged"
+# npm install --save-dev --save-exact prettier
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run: echo "Node npm installing"
+      - run: npm install
+      - run: npm run client-install
+      - run: echo 'export REACT_APP_MY_ENV_VAR="Hello from enviornment variable"' >> $BASH_ENV
+      - run:
+          name: "What branch am I on now?"
+          command: echo ${REACT_APP_MY_ENV_VAR}
+      - run: CI=true npm run build
+  test:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run: echo "Testing Completed"
+      - run: npm install
+      - run: npm run client-install
+      - run: npm test
+    #Anything within package.json script tag
+    #Will Run!
+    #So npm coverage could go here...
+  package-json-script:
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - run: echo "hello package-json-script"
+workflows:
+  version: 2
+  build_test_and_lint:
+    jobs:
+      #Build and test will run in paralell
+      - build
+      - package-json-script
+      # test requires for package-json-script to succeed
+      - test:
+          requires:
+            - package-json-script

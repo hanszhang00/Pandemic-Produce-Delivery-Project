@@ -44,7 +44,7 @@ import { writeProductsToJson } from "./util";
  * @class
  * Main entry point of app front-end logic
  */
-class App extends React.Component {
+export class App extends React.Component {
   // When app component mounts, needs to fetch user information if necessary
   componentDidMount() {
     const { setCurrentUser } = this.props;
@@ -72,24 +72,25 @@ class App extends React.Component {
    */
   render() {
     const { user } = this.props;
+
     return (
       <div>
         <Header />
         <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route path='/about' component={AboutPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route path="/about" component={AboutPage} />
           <Route
             exact
-            path='/signin'
-            render={() => (user ? <Redirect to='/' /> : <SignInAndSignUp />)}
+            path="/signin"
+            render={() => (user ? <Redirect to="/" /> : <SignInAndSignUp />)}
           />
           <Route
             exact
-            path='/admin/add'
+            path="/admin/add"
             render={() =>
               !user || !user.privilege ? (
-                <Redirect to='/' />
+                <Redirect to="/" />
               ) : (
                 <AdminAddProductPage />
               )
@@ -97,17 +98,17 @@ class App extends React.Component {
           ></Route>
           <Route
             exact
-            path='/admin/checkout'
+            path="/admin/checkout"
             render={() =>
               !user || !user.privilege ? (
-                <Redirect to='/' />
+                <Redirect to="/" />
               ) : (
                 <UserOrdersPage />
               )
             }
           ></Route>
-          <Route exact path='/checkout' component={UserCheckoutPage}></Route>
-          <Route exact path='/covid-glimpse' component={CovidGlimpse}></Route>
+          <Route exact path="/checkout" component={UserCheckoutPage}></Route>
+          <Route exact path="/covid-glimpse" component={CovidGlimpse}></Route>
         </Switch>
       </div>
     );

@@ -8,7 +8,7 @@ On the left hand side should say API keys
 unless the website changes ;/ look for api keys 
 */
 
-const STRIPE_PUBLIC_KEY =
+export const STRIPE_PUBLIC_KEY =
   "pk_test_51H4B83HbjepOj68glYv8EjGSuqAhIEsb7R69JaNDNSPF0L81DQupI60zljBNK5MPomdu40dDeAeJtMCUuwNFYY8e00nvkvY6z3";
 
 export default STRIPE_PUBLIC_KEY;

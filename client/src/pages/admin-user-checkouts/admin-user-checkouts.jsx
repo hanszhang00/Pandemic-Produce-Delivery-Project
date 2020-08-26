@@ -1,6 +1,6 @@
 import React from "react";
 import "./admin-user-checkouts.scss";
-import CheckoutItem from "../../components/checkout-item/checkout-item";
+// import CheckoutItem from "../../components/checkout-item/checkout-item";
 
 const UserOrders = ({ orders }) => {
   return (

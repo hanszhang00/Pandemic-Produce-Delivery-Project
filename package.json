@@ -10,8 +10,9 @@
   "scripts": {
     "client-install": "npm install --prefix client",
     "client": "cd client && npm start",
-    "server": "nodemon app.js",
     "build": "cd client && npm run build",
+    "test": "cd client && npm test",
+    "server": "nodemon app.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "start": "node app.js",
     "doc": "jsdoc -c jsdoc.json",

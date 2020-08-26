@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <Connect(Header) />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(ShopPage)",
+          "type": [Function],
+        }
+      }
+      path="/shop"
+    />
+    <Route
+      component={[Function]}
+      path="/about"
+    />
+    <Route
+      exact={true}
+      path="/signin"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/admin/add"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/admin/checkout"
+      render={[Function]}
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(CheckoutPage)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/checkout"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/covid-glimpse"
+    />
+  </Switch>
+</div>
+`;
