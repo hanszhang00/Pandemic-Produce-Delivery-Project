@@ -1,3 +1,3 @@
-const stripePublicKkey = "your own stripe public key";
+const stripePublicKkey = "pk_test_51HouCEJEGYnR1cGwQgBh1QDa4JUjNdxcO57ZqKiJxQE72yoVctWQ7xLI0G1bbZncd8qO63xZ9DdottrXAeXqlPIx00GP8nqkFW";
 
 export default stripePublicKkey;

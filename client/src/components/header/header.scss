@@ -8,7 +8,13 @@
   .logo-container {
     height: 100%;
     width: 100px;
-    padding: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+
+    .logo {
+      height: 100%;
+    }
   }
 
   .options {

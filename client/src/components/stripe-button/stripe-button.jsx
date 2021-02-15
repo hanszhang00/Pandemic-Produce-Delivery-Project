@@ -2,7 +2,7 @@ import React from "react";
 import StripeCheckout from "react-stripe-checkout";
 
 import axios from "axios";
-import STRIPE_PUBLIC_KEY from "../../config/stripekey.example";
+import STRIPE_PUBLIC_KEY from "../../config/stripekey";
 const StripeCheckoutButton = ({ price, paymentSuccessCallback }) => {
   const priceForStripe = price * 100;
 
